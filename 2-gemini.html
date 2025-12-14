@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathshala Store | Your Partner in Academic Success</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .text-primary { color: #1E40AF; } /* Dark Blue */
+        .bg-primary { background-color: #1E40AF; } /* Dark Blue */
+        .text-secondary { color: #059669; } /* Emerald Green */
+        .bg-secondary { background-color: #059669; } /* Emerald Green */
+        .shadow-lg-custom { box-shadow: 0 10px 15px -3px rgba(30, 64, 175, 0.1), 0 4px 6px -2px rgba(30, 64, 175, 0.05); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg-custom">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Business Name -->
+                <a href="#home" class="text-2xl font-extrabold text-primary transition duration-300 hover:text-secondary">
+                    Pathshala Store
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-150">About Us</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-150">Services</a>
+                    <a href="#products" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-150">Books & Stationery</a>
+                    <a href="#howitworks" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-150">How It Works</a>
+                    <a href="#faqs" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-150">FAQs</a>
+                    <a href="#contact" class="text-white bg-secondary hover:bg-green-700 px-4 py-2 rounded-full text-sm font-medium transition duration-150 shadow-md">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-primary rounded-md focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
+                <a href="#about" class="block text-gray-600 hover:bg-blue-50 hover:text-primary px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#services" class="block text-gray-600 hover:bg-blue-50 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#products" class="block text-gray-600 hover:bg-blue-50 hover:text-primary px-3 py-2 rounded-md text-base font-medium">Books & Stationery</a>
+                <a href="#howitworks" class="block text-gray-600 hover:bg-blue-50 hover:text-primary px-3 py-2 rounded-md text-base font-medium">How It Works</a>
+                <a href="#faqs" class="block text-gray-600 hover:bg-blue-50 hover:text-primary px-3 py-2 rounded-md text-base font-medium">FAQs</a>
+                <a href="#contact" class="block text-white bg-secondary hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium mt-2">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- 5.1 Home Page -->
+        <section id="home" class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+            <!-- Background graphic for visual appeal -->
+            <div class="absolute inset-0 opacity-10" style="background-image: url('https://placehold.co/1000x1000/ffffff/1E40AF?text=P');"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <!-- Hero Section -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+                    Pathshala Store
+                </h1>
+                <p class="text-xl sm:text-2xl font-light mb-8 max-w-3xl mx-auto">
+                    Your One-Stop Destination for <span class="font-semibold text-secondary">Academic Services & Quality Stationery</span>.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#contact" class="inline-block bg-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                        Visit Store
+                    </a>
+                    <a href="tel:0000000000" class="inline-block bg-white text-primary font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                        Call Now (123-456-7890)
+                    </a>
+                </div>
+
+                <!-- Overview of Services -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
+                    <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="text-3xl text-primary mb-3">📚</div>
+                        <h3 class="text-lg font-semibold mb-2">Academic Support</h3>
+                        <p class="text-sm text-gray-600">Get help with homework, assignments, and instant doubt clearing sessions for all levels.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="text-3xl text-primary mb-3">✏️</div>
+                        <h3 class="text-lg font-semibold mb-2">Books & Stationery</h3>
+                        <p class="text-sm text-gray-600">A wide range of new and used books, plus all essential high-quality stationery items.</p>
+                    </div>
+                    <div class="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                        <div class="text-3xl text-primary mb-3">🤝</div>
+                        <h3 class="text-lg font-semibold mb-2">Affordable & Trusted</h3>
+                        <p class="text-sm text-gray-600">Building trust with parents and students through transparent, student-friendly pricing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.2 About Us Page -->
+        <section id="about" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">About Pathshala Store</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="lg:pr-10">
+                        <p class="text-lg text-gray-600 mb-6">
+                            Pathshala Store was founded with a clear mission: to simplify the academic journey for students and ease the burden on parents. We believe that access to quality study materials and reliable academic assistance should be straightforward and affordable.
+                        </p>
+                        <h3 class="text-2xl font-semibold text-secondary mb-4">Our Vision: Student-Friendly Learning</h3>
+                        <p class="text-lg text-gray-600">
+                            We focus on creating a supportive environment where students—from primary school to college—feel comfortable seeking help. Whether it's finding the perfect textbook, getting help with a complex project, or clearing an instant doubt, we are dedicated to providing fast, reliable, and student-friendly solutions. Our commitment is to quality, transparency, and building lasting trust within our community.
+                        </p>
+                    </div>
+                    <!-- Placeholder Image/Illustration -->
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-inner hidden lg:block">
+                        <img src="https://placehold.co/600x400/DCE7F7/1E40AF?text=Focus+on+Education" class="w-full h-auto rounded-lg" alt="Illustration of student success and learning tools.">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5.3 Academic Services Page -->
+        <section id="services" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-primary mb-4">Our Academic Support Services</h2>
+                <p class="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                    We offer tailored support to students from Classes 1 to 12 and college level, helping them excel in every aspect of their studies.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Service Card 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300">
+                        <div class="text-4xl text-primary mb-3">📝</div>
+                        <h3 class="text-xl font-semibold mb-2">Assignment Assistance</h3>
+                        <p class="text-gray-600 text-sm">Expert guidance to structure and complete complex school or college assignments accurately and on time.</p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-secondary hover:shadow-xl transition duration-300">
+                        <div class="text-4xl text-secondary mb-3">📐</div>
+                        <h3 class="text-xl font-semibold mb-2">Project & Model Making</h3>
+                        <p class="text-gray-600 text-sm">Creative support for academic projects, science models, and chart work, ensuring high-quality presentation.</p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-primary hover:shadow-xl transition duration-300">
+                        <div class="text-4xl text-primary mb-3">📖</div>
+                        <h3 class="text-xl font-semibold mb-2">Homework Help</h3>
+                        <p class="text-gray-600 text-sm">Daily support and review for school homework, building confidence and conceptual clarity.</p>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-secondary hover:shadow-xl transition duration-300">
+                        <div class="text-4xl text-secondary mb-3">❓</div>
+                        <h3 class="text-xl font-semibold mb-2">Instant Doubt Classes</h3>
+                        <p class="text-gray-600 text-sm">Quick, one-on-one sessions to clear immediate academic doubts on any subject. (Subject to availability)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.4 Books & Stationery Page -->
+        <section id="products" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-primary mb-4">Books & Stationery</h2>
+                <p class="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                    Affordable study materials and essential tools to keep you organized and ready for class.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <!-- Books Section -->
+                    <div class="lg:col-span-2">
+                        <h3 class="text-2xl font-bold text-secondary mb-6 border-b pb-2 border-gray-200">Our Book Offerings</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- New Books -->
+                            <div class="flex items-start space-x-4 p-4 rounded-lg bg-blue-50">
+                                <span class="text-2xl text-primary mt-1">✨</span>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">New Books & Guides</h4>
+                                    <p class="text-gray-600">The latest editions of textbooks, reference guides, and competitive exam preparation material at great prices.</p>
+                                </div>
+                            </div>
+
+                            <!-- Old Books -->
+                            <div class="flex items-start space-x-4 p-4 rounded-lg bg-green-50">
+                                <span class="text-2xl text-secondary mt-1">🔄</span>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">Used Books: Buy, Sell, & Exchange</h4>
+                                    <p class="text-gray-600">A cost-effective way to get necessary textbooks. Bring in your old books for exchange or cash back! Pricing is highly flexible and affordable.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Rental -->
+                            <div class="flex items-start space-x-4 p-4 rounded-lg bg-blue-50">
+                                <span class="text-2xl text-primary mt-1"> аренды</span>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-gray-800">Book Rental System</h4>
+                                    <p class="text-gray-600">Rent expensive reference books for a fixed term. Perfect for short-term projects or exams.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stationery Section -->
+                    <div class="lg:col-span-1">
+                        <h3 class="text-2xl font-bold text-secondary mb-6 border-b pb-2 border-gray-200">Stationery Essentials</h3>
+                        
+                        <ul class="space-y-3 text-lg text-gray-700 list-none pl-0">
+                            <li class="flex items-center space-x-3 p-2 bg-gray-50 rounded-md shadow-sm">
+                                <span class="text-secondary font-bold">✓</span>
+                                <span>High-Quality Pens & Pencils</span>
+                            </li>
+                            <li class="flex items-center space-x-3 p-2 bg-gray-50 rounded-md shadow-sm">
+                                <span class="text-secondary font-bold">✓</span>
+                                <span>Notebooks & Registers (All Sizes)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 p-2 bg-gray-50 rounded-md shadow-sm">
+                                <span class="text-secondary font-bold">✓</span>
+                                <span>Drawing & Art Supplies</span>
+                            </li>
+                            <li class="flex items-center space-x-3 p-2 bg-gray-50 rounded-md shadow-sm">
+                                <span class="text-secondary font-bold">✓</span>
+                                <span>Calculators & Geometry Boxes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.5 How It Works Page -->
+        <section id="howitworks" class="py-16 md:py-20 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold mb-4">How It Works: Simple & Easy</h2>
+                <p class="text-xl font-light mb-12 opacity-90">Getting your academic needs met is just a few steps away.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Step 1 -->
+                    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl transform hover:scale-105 transition duration-300">
+                        <div class="text-4xl font-extrabold text-secondary mb-4">1</div>
+                        <h3 class="text-xl font-semibold mb-3">Visit or Contact</h3>
+                        <p class="text-sm text-gray-600">Visit our physical store OR reach out via phone/WhatsApp with your requirement.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl transform hover:scale-105 transition duration-300">
+                        <div class="text-4xl font-extrabold text-secondary mb-4">2</div>
+                        <h3 class="text-xl font-semibold mb-3">Discuss Requirement</h3>
+                        <p class="text-sm text-gray-600">We discuss the details of your service (e.g., assignment topic, book title) and confirm availability.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl transform hover:scale-105 transition duration-300">
+                        <div class="text-4xl font-extrabold text-secondary mb-4">3</div>
+                        <h3 class="text-xl font-semibold mb-3">Service Provided</h3>
+                        <p class="text-sm text-gray-600">The requested service is completed, or the product is located and provided to you.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white text-gray-800 p-8 rounded-xl shadow-2xl transform hover:scale-105 transition duration-300">
+                        <div class="text-4xl font-extrabold text-secondary mb-4">4</div>
+                        <h3 class="text-xl font-semibold mb-3">Offline Payment</h3>
+                        <p class="text-sm text-gray-600">Payment for the service or product is finalized and paid offline at the store (Cash/UPI/Card).</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.6 Contact Us Page -->
+        <section id="contact" class="py-16 md:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Get in Touch with Pathshala Store</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Contact Details -->
+                    <div class="space-y-8">
+                        
+                        <div class="flex items-center space-x-4 p-4 rounded-xl shadow-md border border-gray-100">
+                            <div class="text-3xl text-secondary">📞</div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Phone Number</h3>
+                                <a href="tel:1234567890" class="text-primary hover:underline text-xl font-mono">123-456-7890</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-4 rounded-xl shadow-md border border-gray-100">
+                            <div class="text-3xl text-secondary">💬</div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">WhatsApp Us</h3>
+                                <a href="https://wa.me/1234567890" target="_blank" class="text-primary hover:underline text-xl font-mono">Chat for Quick Inquiries</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4 p-4 rounded-xl shadow-md border border-gray-100">
+                            <div class="text-3xl text-secondary">📧</div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Email ID</h3>
+                                <a href="mailto:info@pathshalastore.com" class="text-primary hover:underline text-xl font-mono">info@pathshalastore.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 rounded-xl shadow-md border border-gray-100">
+                            <div class="text-3xl text-secondary mt-1">📍</div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">Store Address</h3>
+                                <p class="text-gray-600 text-lg">
+                                    Pathshala Store, <br>
+                                    Shop No. 10, Student Plaza, <br>
+                                    Near University Gate, Academic City, 123456
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Google Maps Embed -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">Find Us on the Map</h3>
+                        <div class="rounded-xl overflow-hidden shadow-xl border border-gray-200 aspect-video lg:aspect-square">
+                            <!-- Placeholder Google Maps Embed -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1111!2d77.0543!3d28.5355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDI5JzExLjMiTiA3N8KwMDMnMTUuNCJF!5e0!3m2!1sen!2sin!4v1678873216965!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                aria-label="Pathshala Store location on Google Maps">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.7 FAQs Page -->
+        <section id="faqs" class="py-16 md:py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-primary mb-12">Frequently Asked Questions</h2>
+                
+                <div class="space-y-4">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white p-5 rounded-xl shadow-md cursor-pointer hover:shadow-lg transition duration-300" onclick="toggleAnswer('faq1')">
+                        <h3 class="text-lg font-semibold text-gray-800 flex justify-between items-center">
+                            Do you provide urgent assignment help?
+                            <span class="text-xl text-secondary" id="icon-faq1">+</span>
+                        </h3>
+                        <p id="faq1" class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out">
+                            Yes, we do! We understand deadlines are critical. Urgent assignment help is available, but please note that this is subject to our current workload and tutor availability. We recommend contacting us via WhatsApp for the quickest response.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white p-5 rounded-xl shadow-md cursor-pointer hover:shadow-lg transition duration-300" onclick="toggleAnswer('faq2')">
+                        <h3 class="text-lg font-semibold text-gray-800 flex justify-between items-center">
+                            Can books be rented monthly?
+                            <span class="text-xl text-secondary" id="icon-faq2">+</span>
+                        </h3>
+                        <p id="faq2" class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out">
+                            Absolutely. We offer flexible book rental plans, typically on a monthly basis, for expensive reference and academic books. Visit the store or call us to check the availability and deposit requirements for the book you need.
+                        </p>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white p-5 rounded-xl shadow-md cursor-pointer hover:shadow-lg transition duration-300" onclick="toggleAnswer('faq3')">
+                        <h3 class="text-lg font-semibold text-gray-800 flex justify-between items-center">
+                            Are instant doubt classes available daily?
+                            <span class="text-xl text-secondary" id="icon-faq3">+</span>
+                        </h3>
+                        <p id="faq3" class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out">
+                            Yes, we generally provide instant doubt classes daily during our operating hours. However, this is always subject to the availability of our expert tutors. We recommend calling ahead or checking our daily schedule before visiting for a specific subject.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                
+                <!-- Business Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-secondary">Pathshala Store</h4>
+                    <p class="text-sm text-gray-300">Your trusted partner for academic support and quality materials. Informational website only. All transactions are handled offline.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-secondary transition duration-150">About Us</a></li>
+                        <li><a href="#services" class="hover:text-secondary transition duration-150">Academic Services</a></li>
+                        <li><a href="#products" class="hover:text-secondary transition duration-150">Books & Stationery</a></li>
+                        <li><a href="#faqs" class="hover:text-secondary transition duration-150">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Reach Us</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="tel:1234567890" class="hover:text-secondary transition duration-150">📞 123-456-7890</a></li>
+                        <li><a href="https://wa.me/1234567890" target="_blank" class="hover:text-secondary transition duration-150">💬 WhatsApp</a></li>
+                        <li><a href="mailto:info@pathshalastore.com" class="hover:text-secondary transition duration-150">📧 info@pathshalastore.com</a></li>
+                        <li><a href="#contact" class="hover:text-secondary transition duration-150">📍 Store Address</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Security Note -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Security & Privacy</h4>
+                    <p class="text-sm text-gray-300">This site does not collect sensitive data or process payments online. Secure connection (HTTPS) is enabled.</p>
+                </div>
+
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Pathshala Store. All Rights Reserved.</p>
+                <p class="mt-1">Version: 1.0 | Content Reviewed Monthly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Basic JavaScript for interactivity (Mobile Menu & FAQs) -->
+    <script>
+        // 1. Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // 2. FAQ Accordion Toggle
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (answer.classList.contains('hidden')) {
+                // Open the answer
+                answer.classList.remove('hidden');
+                icon.textContent = '-';
+            } else {
+                // Close the answer
+                answer.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        }
+    </script>
+</body>
+</html>
