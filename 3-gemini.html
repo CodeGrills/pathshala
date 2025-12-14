@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathshala Store - Your Partner in Education</title>
+    
+    <!-- Fonts: Montserrat (Headings) and Roboto (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a', // Deep Blue
+                            lightBlue: '#3b82f6',
+                            yellow: '#fbbf24', // Mustard Yellow
+                            darkYellow: '#d97706',
+                            gray: '#f3f4f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body { font-family: 'Roboto', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i data-lucide="book-open" class="h-8 w-8 text-brand-blue"></i>
+                    <span class="font-heading font-bold text-xl md:text-2xl text-brand-blue tracking-tight">Pathshala Store</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-gray-700 hover:text-brand-blue font-medium transition">Academic Services</a>
+                    <a href="#retail" class="text-gray-700 hover:text-brand-blue font-medium transition">Retail & Supplies</a>
+                    <a href="#rental" class="text-gray-700 hover:text-brand-blue font-medium transition">Book Rental</a>
+                    <a href="#about" class="text-gray-700 hover:text-brand-blue font-medium transition">About Us</a>
+                    <a href="#contact" class="bg-brand-blue text-white px-5 py-2 rounded-full font-medium hover:bg-blue-800 transition shadow-lg">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-brand-blue focus:outline-none p-2">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-lg">
+                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Academic Services</a>
+                <a href="#retail" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Retail & Supplies</a>
+                <a href="#rental" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">Book Rental</a>
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50">About Us</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center rounded-md text-base font-bold bg-brand-yellow text-brand-blue">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen min-h-[600px] flex items-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+                Your Partner in Education <br>
+                <span class="text-brand-yellow">From Assignments to Supplies</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-10 text-gray-100 max-w-2xl mx-auto font-light">
+                Whether you need help with a complex project, affordable textbooks, or premium stationery, Pathshala Store is here to support your academic journey.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-brand-yellow text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-darkYellow hover:text-white transition shadow-lg transform hover:-translate-y-1">
+                    Visit Store
+                </a>
+                <a href="https://wa.me/911234567890" target="_blank" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-blue transition flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Academic Support</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Services We Offer</h2>
+                <div class="w-20 h-1 bg-brand-yellow mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 p-8 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                        <i data-lucide="file-text" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Assignment Assistance</h3>
+                    <p class="text-gray-600 mb-4">Expert guidance for school and college assignments across all major subjects. We help you structure and research effectively.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 p-8 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                        <i data-lucide="flask-conical" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Project & Models</h3>
+                    <p class="text-gray-600 mb-4">Custom creation of Science, Arts, and Commerce models. From working models to static displays for exhibitions.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 p-8 rounded-xl border border-gray-100 text-center">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-white">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Doubt Clearing</h3>
+                    <p class="text-gray-600 mb-4">Instant offline and online doubt-clearing sessions. Walk in with a question, walk out with clarity.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 p-4 bg-yellow-50 border-l-4 border-brand-yellow rounded-r-lg">
+                <p class="text-sm text-yellow-800 flex items-start gap-2">
+                    <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                    <strong>Disclaimer:</strong> Pathshala Store provides educational assistance to aid learning. We do not encourage academic dishonesty or plagiarism.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Retail & Supplies Section -->
+    <section id="retail" class="py-20 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">One Stop Shop</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Retail & Supplies</h2>
+                </div>
+                <a href="#contact" class="hidden md:inline-flex items-center text-brand-blue font-bold hover:text-brand-darkYellow transition mt-4 md:mt-0">
+                    Check Stock Availability <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Stationery" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold">Stationery</h3>
+                            <p class="text-gray-300 text-sm mt-1">Pens, Notebooks, Files</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Textbooks" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold">Textbooks</h3>
+                            <p class="text-gray-300 text-sm mt-1">CBSE, ICSE, & State Board</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Art Supplies" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold">Art Supplies</h3>
+                            <p class="text-gray-300 text-sm mt-1">Canvases, Paints, Brushes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-md aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Accessories" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-white text-xl font-bold">Accessories</h3>
+                            <p class="text-gray-300 text-sm mt-1">Bags, Calculators, Geometry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                 <a href="#contact" class="inline-flex items-center text-brand-blue font-bold hover:text-brand-darkYellow transition">
+                    Check Stock Availability <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Rental Section -->
+    <section id="rental" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">Save Money</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Book Rental Service</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Why buy when you can rent? Save up to 60% on academic books by using our rental service for the academic year.</p>
+            </div>
+
+            <!-- Steps -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 relative">
+                <!-- Connector Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-1/6 right-1/6 h-0.5 bg-gray-200 -z-10"></div>
+
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-brand-yellow rounded-full flex items-center justify-center text-brand-blue shadow-lg mb-6 border-4 border-white">
+                        <span class="text-3xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pick Your Books</h3>
+                    <p class="text-gray-500 text-sm">Select from our wide range of used and new curriculum books.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-brand-yellow rounded-full flex items-center justify-center text-brand-blue shadow-lg mb-6 border-4 border-white">
+                        <span class="text-3xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pay Deposit</h3>
+                    <p class="text-gray-500 text-sm">Pay the book value as a refundable security deposit + nominal fee.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-brand-yellow rounded-full flex items-center justify-center text-brand-blue shadow-lg mb-6 border-4 border-white">
+                        <span class="text-3xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Return & Save</h3>
+                    <p class="text-gray-500 text-sm">Return the books in good condition at year-end and get your deposit back.</p>
+                </div>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                <div class="bg-brand-blue p-4 text-white text-center">
+                    <h3 class="font-bold text-lg">Cost Comparison (Example for 1 Set)</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50 border-b border-gray-200">
+                                <th class="p-4 font-semibold text-gray-700">Cost Type</th>
+                                <th class="p-4 font-semibold text-gray-700">Buying New</th>
+                                <th class="p-4 font-semibold text-brand-blue">Renting @ Pathshala</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="p-4 text-gray-600">Initial Payment</td>
+                                <td class="p-4 font-medium">₹ 2,000</td>
+                                <td class="p-4 font-medium">₹ 2,000 (Refundable Deposit)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 text-gray-600">Rental Fee (Yearly)</td>
+                                <td class="p-4 font-medium">N/A</td>
+                                <td class="p-4 font-medium">₹ 500</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 text-gray-600">Refund at Year End</td>
+                                <td class="p-4 font-medium">₹ 0 (Scrap Value)</td>
+                                <td class="p-4 font-medium">₹ 1,500</td>
+                            </tr>
+                            <tr class="bg-yellow-50">
+                                <td class="p-4 font-bold text-gray-900">Effective Cost</td>
+                                <td class="p-4 font-bold text-red-600">₹ 2,000</td>
+                                <td class="p-4 font-bold text-green-600">₹ 500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-gray-50 text-xs text-center text-gray-500">
+                    * Prices are estimates. Terms and conditions apply regarding book condition upon return.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Pathshala Team" class="rounded-lg shadow-xl">
+                </div>
+                <div class="order-1 md:order-2">
+                    <span class="text-brand-blue font-bold tracking-wider uppercase text-sm">About Us</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Empowering Students Since 2020</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Pathshala Store was founded with a simple mission: to make high-quality educational resources accessible to every student. We understand the pressure of academic life, which is why we offer a holistic range of services under one roof.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        From late-night assignment emergencies to finding that specific reference book, our team is dedicated to supporting your success.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="text-center">
+                            <h4 class="text-3xl font-bold text-brand-blue">500+</h4>
+                            <p class="text-sm text-gray-500">Happy Students</p>
+                        </div>
+                        <div class="h-10 w-px bg-gray-300"></div>
+                        <div class="text-center">
+                            <h4 class="text-3xl font-bold text-brand-blue">1000+</h4>
+                            <p class="text-sm text-gray-500">Books Rented</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-brand-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Visit Us Today</h2>
+                <p class="mt-4 text-blue-200">We are open Monday to Saturday, 10:00 AM - 8:00 PM</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-white/10 rounded-lg">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-brand-yellow"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Our Location</h4>
+                            <p class="text-blue-100">Shop No. 12, Student Center Road,<br>Near City College, [City Name] - Pin Code</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-white/10 rounded-lg">
+                            <i data-lucide="phone" class="w-6 h-6 text-brand-yellow"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Call Us</h4>
+                            <p class="text-blue-100">+91 98765 43210</p>
+                            <a href="tel:+919876543210" class="text-brand-yellow text-sm font-bold hover:underline mt-1 inline-block">Call Now</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-white/10 rounded-lg">
+                            <i data-lucide="mail" class="w-6 h-6 text-brand-yellow"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Email Us</h4>
+                            <p class="text-blue-100">contact@pathshalastore.com</p>
+                            <a href="mailto:contact@pathshalastore.com" class="text-brand-yellow text-sm font-bold hover:underline mt-1 inline-block">Send Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map (Placeholder Iframe) -->
+                <div class="md:col-span-2 bg-white rounded-lg overflow-hidden h-80 shadow-lg relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.066497743542!2d77.20902131508246!3d28.627776982419736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd36a5a8ab8f%3A0x6b4f7b6b1b6b1b6b!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <!-- Overlay for demo purposes -->
+                    <div class="absolute inset-0 pointer-events-none border-4 border-white/20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="book-open" class="h-6 w-6 text-brand-yellow"></i>
+                        <span class="font-heading font-bold text-xl text-white">Pathshala Store</span>
+                    </div>
+                    <p class="text-sm">Empowering students with affordable resources.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+                &copy; 2023 Pathshala Store. All rights reserved. <br class="md:hidden"> Designed for Educational Purposes.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Icons -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
