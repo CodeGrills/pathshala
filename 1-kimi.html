@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pathshala Store - Student support services, books, stationery & assignment help for Classes 1-12 & college students. Visit our store or WhatsApp today!">
+    <meta name="keywords" content="assignment help, books, stationery, student support, homework help, Pathshala Store">
+    <meta name="author" content="Pathshala Store">
+    <title>Pathshala Store - Your Academic Support Partner</title>
+    
+    <style>
+        /* ====== EDUCATION-FRIENDLY DESIGN SYSTEM ====== */
+        :root {
+            --primary-blue: #2563eb;
+            --success-green: #059669;
+            --accent-orange: #ea580c;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-light: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ====== RESET & BASE STYLES ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            scroll-behavior: smooth;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        /* ====== LAYOUT COMPONENTS ====== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        /* ====== NAVIGATION ====== */
+        nav {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* ====== BUTTONS ====== */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--success-green);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #047857;
+        }
+
+        .btn-outline {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue), #1e40af);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ====== CARDS ====== */
+        .card {
+            background: var(--bg-white);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-light);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        /* ====== SECTION HEADERS ====== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ====== WHY CHOOSE US ====== */
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-medium);
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ====== CONTACT CTA ====== */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--success-green), #047857);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .contact-cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            line-height: 2;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--bg-white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-lg);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .hero {
+                padding: 4rem 0;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* ====== PERFORMANCE OPTIMIZATIONS ====== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ====== ACCESSIBILITY ====== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        :focus {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ====== NAVIGATION ====== -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container container">
+            <div class="logo" aria-label="Pathshala Store Home">Pathshala Store</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section id="home" class="hero" role="banner">
+        <div class="container">
+            <h1>Your Academic Success Partner</h1>
+            <p>Assignment help, books, stationery & expert guidance for students from Classes 1–12 and college</p>
+            <div class="hero-cta">
+                <a href="tel:+91XXXXXXXXXX" class="btn btn-primary" aria-label="Call Pathshala Store now">
+                    📞 Call Now
+                </a>
+                <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-secondary" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+                    💬 WhatsApp Us
+                </a>
+                <a href="#contact" class="btn btn-outline" aria-label="Find our store location">
+                    📍 Visit Store
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SERVICES OVERVIEW ====== -->
+    <section id="services" class="section" aria-labelledby="services-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="services-heading">How We Help Students Succeed</h2>
+                <p>Personalized academic support tailored to your needs</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Assignment Assistance</h3>
+                    <p>Expert help with school and college assignments. Get guidance on structure, research, and presentation.</p>
+                    <p><small><em>Classes 1–12 & College | Subject to availability</em></small></p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Projects & Models</h3>
+                    <p>Hands-on support for science projects, models, and practical assignments. Make learning interactive!</p>
+                    <p><small><em>All grades supported</em></small></p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">❓</div>
+                    <h3>Instant Doubt Classes</h3>
+                    <p>Quick clarification sessions for difficult topics. Walk in or book via phone/WhatsApp.</p>
+                    <p><small><em>Timings vary daily</em></small></p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Homework Help</h3>
+                    <p>Step-by-step guidance to understand and complete homework independently.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Study Material</h3>
+                    <p>Curated notes, sample papers, and reference materials for exam preparation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Student-friendly rates with no hidden costs. Pay offline after service delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BOOKS & STATIONERY HIGHLIGHTS ====== -->
+    <section id="books" class="section" aria-labelledby="books-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="books-heading">Books & Stationery Hub</h2>
+                <p>Everything you need for your academic journey</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>New Books</h3>
+                    <p>Latest editions of textbooks, reference books, and guides at competitive prices.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">♻️</div>
+                    <h3>Old Books</h3>
+                    <p>Buy, sell, or exchange pre-owned books. Save money and recycle!</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Rental System</h3>
+                    <p>Rent books monthly for temporary needs. Cost-effective and convenient.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✏️</div>
+                    <h3>Stationery</h3>
+                    <p>Quality stationery supplies from basics to project materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== HOW IT WORKS ====== -->
+    <section id="how-it-works" class="section" aria-labelledby="how-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="how-heading">Get Started in 3 Simple Steps</h2>
+                <p>No registration. No online payment. Just walk in or reach out!</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">1️⃣</div>
+                    <h3>Visit or Contact</h3>
+                    <p>Come to our store or message/call us on WhatsApp</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">2️⃣</div>
+                    <h3>Discuss Needs</h3>
+                    <p>Share your requirements – assignment, books, or doubt clarification</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">3️⃣</div>
+                    <h3>Get & Pay</h3>
+                    <p>Receive your service/product and pay securely offline</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHY CHOOSE US ====== -->
+    <section class="section" aria-labelledby="why-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="why-heading">Why Students & Parents Trust Us</h2>
+            </div>
+            <div class="grid grid-2">
+                <div>
+                    <ul class="feature-list">
+                        <li><strong>10+ Years Experience:</strong> Supporting local students since 2014</li>
+                        <li><strong>Expert Guidance:</strong> Qualified teachers and subject specialists</li>
+                        <li><strong>Affordable Solutions:</strong> Student-friendly pricing always</li>
+                        <li><strong>Flexible Timings:</strong> Open late evenings for working students</li>
+                        <li><strong>Community Trusted:</strong> 5000+ students served in our locality</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="feature-list">
+                        <li><strong>One-Stop Shop:</strong> Services + books + stationery under one roof</li>
+                        <li><strong>Quality Guarantee:</strong> Thoroughly checked books and materials</li>
+                        <li><strong>Personal Attention:</strong> Small groups and individual doubt sessions</li>
+                        <li><strong>Safe Environment:</strong> Student-friendly space with CCTV monitoring</li>
+                        <li><strong>No Digital Hassle:</strong> Simple offline process, no app needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT CALL-TO-ACTION ====== -->
+    <section id="contact" class="contact-cta" aria-labelledby="contact-heading">
+        <div class="container">
+            <h2 id="contact-heading">Ready to Excel? Get in Touch Today!</h2>
+            <p style="margin-bottom: 2rem;">We're here Monday–Saturday, 9 AM to 8 PM</p>
+            <div class="hero-cta">
+                <a href="tel:+91XXXXXXXXXX" class="btn btn-primary">
+                    📞 Call: +91 XXXXX XXXXX
+                </a>
+                <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                    💬 WhatsApp Message
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#books">Books & Stationery</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <ul>
+                        <li>📍 <strong>Address:</strong> [Your Store Address Here]</li>
+                        <li>📞 <strong>Phone:</strong> +91 XXXXX XXXXX</li>
+                        <li>✉️ <strong>Email:</strong> info@pathshalastore.com</li>
+                        <li>🕐 <strong>Hours:</strong> Mon–Sat, 9 AM–8 PM</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/91XXXXXXXXXX">WhatsApp Us</a></li>
+                        <li><a href="#contact">Get Directions</a></li>
+                        <li><a href="tel:+91XXXXXXXXXX">Call Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pathshala Store. All rights reserved. | Designed for Student Success</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Lazy loading simulation for images (if you add them later)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            // Use for images: <img data-src="path.jpg" class="lazy-load">
+            document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
+        }
+    </script>
+</body>
+</html>
